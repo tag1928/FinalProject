@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject.profileController">
+   <children>
+    <Button fx:id="setStatus" layoutX="14.0" layoutY="112.0" mnemonicParsing="false" onAction="#ButtonSetStatus" prefHeight="34.0" prefWidth="150.0" text="Change Status" />
+      <Button fx:id="setPicture" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#setpic" prefHeight="33.0" prefWidth="150.0" text="Change Picture" />
+      <Button layoutX="16.0" layoutY="289.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" text="Add Friend" />
+      <Button layoutX="16.0" layoutY="331.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" text="Remove Friend" />
+      <Button layoutX="174.0" layoutY="10.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="118.0" text="Open Conversation" />
+      <Button layoutX="301.0" layoutY="10.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" text="lookup" />
+      <Button layoutX="471.0" layoutY="305.0" lineSpacing="5.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Settings" />
+      <Button graphicTextGap="5.0" layoutX="471.0" layoutY="364.0" lineSpacing="5.0" mnemonicParsing="false" text="Back to my profile" />
+      <Button fx:id="Logoutbutton" layoutX="471.0" layoutY="335.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#logoutcode" prefHeight="26.0" prefWidth="112.0" text="Log out" />
+      <ImageView fx:id="profilePic" fitHeight="178.0" fitWidth="200.0" layoutX="185.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField layoutX="14.0" layoutY="10.0" prefHeight="34.0" prefWidth="150.0" promptText="username" />
+      <TextField fx:id="StatusText" layoutX="15.0" layoutY="75.0" prefHeight="34.0" prefWidth="150.0" promptText="New status" />
+      <TextField fx:id="imageAddress" layoutX="15.0" layoutY="159.0" prefHeight="34.0" prefWidth="150.0" promptText="Image adress" />
+      <TextField layoutX="16.0" layoutY="250.0" prefHeight="34.0" prefWidth="150.0" promptText="Username" />
+      <Label fx:id="Username" layoutX="185.0" layoutY="66.0" prefHeight="18.0" prefWidth="94.0" text="Name goes here" />
+      <Label layoutX="395.0" layoutY="66.0" text="Friends:" />
+      <Label fx:id="Status" layoutX="185.0" layoutY="267.0" prefHeight="18.0" prefWidth="94.0" text="Status goes here" />
+      <Label layoutX="395.0" layoutY="92.0" text="Friend1" />
+      <Label layoutX="395.0" layoutY="121.0" text="Friend2" />
+      <Label layoutX="395.0" layoutY="151.0" text="Friend3" />
+   </children>
+</AnchorPane>
