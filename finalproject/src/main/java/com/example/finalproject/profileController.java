@@ -12,19 +12,30 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class profileController {
     @FXML
     private Label Status;
     @FXML
     private Label Username;
+
     @FXML
     private TextField imageAddress;
     @FXML
     private TextField StatusText;
     @FXML
+    private TextField friendNameText;
+
+    @FXML
     private ImageView profilePic;
+
     @FXML
     private Button setPicture;
     @FXML
@@ -60,7 +71,7 @@ public class profileController {
     @FXML
     private void logoutcode(ActionEvent e) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginPage.fxml"));
         Parent root = loader.load();
 
         Stage stage = (Stage)((javafx.scene.Node)e.getSource()).getScene().getWindow();
@@ -69,7 +80,23 @@ public class profileController {
         stage.show();
     }
 
+    @FXML
+    private void addFriend(javafx.event.ActionEvent e) throws Exception
+    {
+        try(Connection connection = RegistrationController.connect())
+        {
+            PreparedStatement pt = connection.prepareStatement("SELECT WHERE ID = ? FROM users;");
+            pt.setInt(1, RegistrationController.userId);
 
+            ResultSet a = pt.executeQuery();
 
+            BufferedWriter writer = new BufferedWriter(new FileWriter(a.getString("friends")));
+            writer.write(friendNameText.getText() + "\n");
+        }
 
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+        }
+    }
 }
