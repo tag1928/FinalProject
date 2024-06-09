@@ -32,7 +32,8 @@ public class Scene1Controller {
 
 
     @FXML
-    private Connection connect() throws SQLException {
+    private Connection connect() throws SQLException
+    {
 
         String url = "jdbc:mysql://localhost:3306/real_facebook";
         String user = "root";
@@ -41,22 +42,25 @@ public class Scene1Controller {
     }
 
     @FXML
-    private void CreateAccount(ActionEvent event) {
+    private void CreateAccount(ActionEvent event)
+    {
         String name = username.getText();
         String email = mail.getText();
         String Phonenumber = phonenumber.getText();
         String Pass = password.getText();
 
-        String sql = "INSERT INTO users (password,username,phone_number,email) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO users (name, email, phoneNumber, password) VALUES (?,?,?,?)";
 
         try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, Pass);
-            pstmt.setString(2, name);
+             PreparedStatement pstmt = conn.prepareStatement(sql))
+        {
+            pstmt.setString(1, name);
+            pstmt.setString(2, email);
             pstmt.setString(3, Phonenumber);
-            pstmt.setString(4, email);
+            pstmt.setString(4, Pass);
             pstmt.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             System.out.println(e.getMessage());
         }
     }
