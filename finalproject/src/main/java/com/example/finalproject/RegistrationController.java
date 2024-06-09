@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegistrationController2 {
+public class RegistrationController {
     @FXML
     private Button ReturnTMP;
     @FXML
@@ -66,7 +66,7 @@ public class RegistrationController2 {
     }
     @FXML
     public void ReturnToMainPage(ActionEvent e) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("RegistrationPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginPage.fxml"));
         Parent root = loader.load();
 
         Stage stage = (Stage)((javafx.scene.Node)e.getSource()).getScene().getWindow();
